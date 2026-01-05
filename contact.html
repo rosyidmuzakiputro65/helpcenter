@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontak — Pusat Bantuan</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Header dengan Navbar Bootstrap -->
+  <header class="site-header sticky-top bg-white shadow-sm">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg navbar-light py-3">
+        <a class="navbar-brand brand fw-bold text-primary fs-4" href="index.html">
+          <i class="bi bi-question-circle-fill me-2"></i>Pusat Bantuan
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="topics.html">Topik Bantuan</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="faq.html">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active fw-semibold" aria-current="page" href="contact.html">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container my-5">
+    <!-- Page Header -->
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto text-center">
+        <h1 class="display-5 fw-bold mb-3">Kontak Dukungan</h1>
+        <p class="lead text-muted">Kami siap membantu Anda. Kirim pesan dan kami akan merespons dalam 24 jam.</p>
+      </div>
+    </div>
+
+    <div class="row g-5">
+      <!-- Contact Form -->
+      <div class="col-lg-7">
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4 p-md-5">
+            <div class="d-flex align-items-center mb-4">
+              <div class="bg-primary bg-opacity-10 rounded-circle p-3 me-3">
+                <i class="bi bi-envelope text-primary fs-4"></i>
+              </div>
+              <div>
+                <h2 class="h4 mb-0 fw-bold">Formulir Kontak</h2>
+                <p class="text-muted small mb-0">Template statis — tidak ada backend</p>
+              </div>
+            </div>
+
+            <form id="contactForm" novalidate>
+              <!-- Name Field -->
+              <div class="mb-4">
+                <label for="name" class="form-label fw-semibold">
+                  Nama Lengkap <span class="text-danger">*</span>
+                </label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-end-0">
+                    <i class="bi bi-person"></i>
+                  </span>
+                  <input type="text" class="form-control border-start-0 ps-0" id="name" required placeholder="Masukkan nama lengkap Anda">
+                  <div class="invalid-feedback">
+                    Nama harus diisi
+                  </div>
+                </div>
+              </div>
+
+              <!-- Email Field -->
+              <div class="mb-4">
+                <label for="email" class="form-label fw-semibold">
+                  Email <span class="text-danger">*</span>
+                </label>
+                <div class="input-group">
+                  <span class="input-group-text bg-light border-end-0">
+                    <i class="bi bi-envelope"></i>
+                  </span>
+                  <input type="email" class="form-control border-start-0 ps-0" id="email" required placeholder="nama@example.com">
+                  <div class="invalid-feedback">
+                    Email valid harus diisi
+                  </div>
+                </div>
+              </div>
+
+              <!-- Subject Field -->
+              <div class="mb-4">
+                <label for="subject" class="form-label fw-semibold">
+                  Subjek <span class="text-danger">*</span>
+                </label>
+                <select class="form-select" id="subject" required>
+                  <option value="">Pilih kategori...</option>
+                  <option value="technical">Masalah Teknis</option>
+                  <option value="account">Akun & Login</option>
+                  <option value="billing">Billing & Pembayaran</option>
+                  <option value="feature">Permintaan Fitur</option>
+                  <option value="other">Lainnya</option>
+                </select>
+                <div class="invalid-feedback">
+                  Pilih kategori subjek
+                </div>
+              </div>
+
+              <!-- Message Field -->
+              <div class="mb-4">
+                <label for="message" class="form-label fw-semibold">
+                  Pesan <span class="text-danger">*</span>
+                </label>
+                <textarea class="form-control" id="message" rows="6" required placeholder="Jelaskan pertanyaan atau masalah Anda secara detail..."></textarea>
+                <div class="invalid-feedback">
+                  Pesan harus diisi
+                </div>
+                <div class="form-text">Minimal 10 karakter</div>
+              </div>
+
+              <!-- Priority -->
+              <div class="mb-4">
+                <label class="form-label fw-semibold d-block">Prioritas</label>
+                <div class="btn-group" role="group">
+                  <input type="radio" class="btn-check" name="priority" id="low" value="low" checked>
+                  <label class="btn btn-outline-success" for="low">
+                    <i class="bi bi-circle-fill me-1"></i> Rendah
+                  </label>
+
+                  <input type="radio" class="btn-check" name="priority" id="medium" value="medium">
+                  <label class="btn btn-outline-warning" for="medium">
+                    <i class="bi bi-circle-fill me-1"></i> Sedang
+                  </label>
+
+                  <input type="radio" class="btn-check" name="priority" id="high" value="high">
+                  <label class="btn btn-outline-danger" for="high">
+                    <i class="bi bi-circle-fill me-1"></i> Tinggi
+                  </label>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg">
+                  <i class="bi bi-send me-2"></i>Kirim Pesan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Information -->
+      <div class="col-lg-5">
+        <!-- Contact Cards -->
+        <div class="card border-0 shadow-sm mb-4">
+          <div class="card-body p-4">
+            <h3 class="h5 fw-bold mb-4">Informasi Kontak</h3>
+            
+            <!-- Email -->
+            <div class="d-flex align-items-start mb-4 pb-3 border-bottom">
+              <div class="bg-primary bg-opacity-10 rounded-circle p-3 me-3 flex-shrink-0">
+                <i class="bi bi-envelope text-primary fs-5"></i>
+              </div>
+              <div>
+                <h4 class="h6 fw-semibold mb-1">Email Support</h4>
+                <a href="mailto:timunida@gmail.com" class="text-decoration-none">timunida@gmail.com</a>
+                <p class="text-muted small mb-0 mt-1">Respons dalam 24 jam</p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="d-flex align-items-start mb-4 pb-3 border-bottom">
+              <div class="bg-success bg-opacity-10 rounded-circle p-3 me-3 flex-shrink-0">
+                <i class="bi bi-telephone text-success fs-5"></i>
+              </div>
+              <div>
+                <h4 class="h6 fw-semibold mb-1">Telepon</h4>
+                <a href="tel:+62211234567" class="text-decoration-none">+62 8122 5072 304</a>
+                <p class="text-muted small mb-0 mt-1">Senin-Jumat, 09:00-17:00 WIB</p>
+              </div>
+            </div>
+
+            <!-- Live Chat -->
+            <div class="d-flex align-items-start">
+              <div class="bg-info bg-opacity-10 rounded-circle p-3 me-3 flex-shrink-0">
+                <i class="bi bi-chat-dots text-info fs-5"></i>
+              </div>
+              <div>
+                <h4 class="h6 fw-semibold mb-1">Live Chat</h4>
+                <p class="text-muted small mb-2">Chat langsung dengan tim kami</p>
+                <button class="btn btn-sm btn-info text-white">
+                  <i class="bi bi-chat-dots me-1"></i>Mulai Chat
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- FAQ Card -->
+        <div class="card border-0 bg-light">
+          <div class="card-body p-4">
+            <div class="d-flex align-items-center mb-3">
+              <i class="bi bi-lightbulb text-warning fs-3 me-2"></i>
+              <h3 class="h6 fw-bold mb-0">Coba Cek FAQ Dulu</h3>
+            </div>
+            <p class="text-muted small mb-3">Mungkin pertanyaan Anda sudah terjawab di halaman FAQ kami</p>
+            <a href="faq.html" class="btn btn-sm btn-outline-primary w-100">
+              <i class="bi bi-arrow-right me-1"></i>Lihat FAQ
+            </a>
+          </div>
+        </div>
+
+        <!-- Social Media -->
+        <div class="card border-0 shadow-sm mt-4">
+          <div class="card-body p-4">
+            <h3 class="h6 fw-bold mb-3">Ikuti Kami</h3>
+            <div class="d-flex gap-2">
+              <a href="#" class="btn btn-outline-primary btn-sm flex-fill">
+                <i class="bi bi-facebook"></i>
+              </a>
+              <a href="#" class="btn btn-outline-info btn-sm flex-fill">
+                <i class="bi bi-twitter"></i>
+              </a>
+              <a href="#" class="btn btn-outline-danger btn-sm flex-fill">
+                <i class="bi bi-instagram"></i>
+              </a>
+              <a href="#" class="btn btn-outline-success btn-sm flex-fill">
+                <i class="bi bi-whatsapp"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer bg-dark text-white py-4 mt-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <p class="mb-0">&copy; 2025 Pusat Bantuan — Template UAS IMK</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="#" class="text-white text-decoration-none me-3">
+            <i class="bi bi-facebook"></i>
+          </a>
+          <a href="#" class="text-white text-decoration-none me-3">
+            <i class="bi bi-twitter"></i>
+          </a>
+          <a href="#" class="text-white text-decoration-none">
+            <i class="bi bi-instagram"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+  <!-- Form Validation & Submit -->
+  <script>
+    // Bootstrap Form Validation
+    const form = document.getElementById('contactForm');
+    
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      
+      if (form.checkValidity()) {
+        // Show success message
+        const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          subject: document.getElementById('subject').value,
+          message: document.getElementById('message').value,
+          priority: document.querySelector('input[name="priority"]:checked').value
+        };
+        
+        console.log('Form Data:', formData);
+        
+        // Show success alert
+        const alertDiv = document.createElement('div');
+        alertDiv.className = 'alert alert-success alert-dismissible fade show';
+        alertDiv.innerHTML = `
+          <i class="bi bi-check-circle me-2"></i>
+          <strong>Terima kasih!</strong> Pesan Anda telah diterima. Kami akan merespons dalam 24 jam.
+          <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        `;
+        
+        form.parentElement.insertBefore(alertDiv, form);
+        form.reset();
+        form.classList.remove('was-validated');
+        
+        // Scroll to alert
+        alertDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        
+        // Auto dismiss after 5 seconds
+        setTimeout(() => {
+          alertDiv.remove();
+        }, 5000);
+      }
+      
+      form.classList.add('was-validated');
+    });
+    
+    // Real-time validation for message length
+    const messageField = document.getElementById('message');
+    messageField.addEventListener('input', function() {
+      if (this.value.length < 10 && this.value.length > 0) {
+        this.setCustomValidity('Pesan minimal 10 karakter');
+      } else {
+        this.setCustomValidity('');
+      }
+    });
+  </script>
+</body>
+</html>
